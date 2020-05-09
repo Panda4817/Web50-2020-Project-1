@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block header %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <h1 class="text-center title">Welcome to Book<span class="font-weight-lighter">Search</span>Review</h1>
+            </div>
+            <div class="row row justify-content-center">
+                <p class="text-center lead little">Search for books, add reviews and view Goodreads ratings</p>
+            </div>
+            <div class="row justify-content-center">
+                {% if session.user_id %}
+                <div class="col-md-2 text-center">
+                    <a type="button" class="btn btn-lg btn-block" href="/search">Search Book</a>
+                </div>
+                {% else %}
+                <div class="col-md-2 text-center m-3">
+                    <a type="button" class="btn btn-lg btn-block" href="/login">Sign in</a>
+                </div>
+                <div class="col-md-2 text-center m-3">
+                    <a type="button" class="btn btn-lg btn-block" href="/register">Join</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}

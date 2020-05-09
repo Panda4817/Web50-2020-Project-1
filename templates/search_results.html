@@ -1,0 +1,29 @@
+<h2 id="search_results">Results</h2>
+<p class="lead">Click on the ISBN number to go to the book page</p>
+<br>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in search_results%}
+        <tr>
+            <td><a href="{{ url_for('book', book_isbn=row['isbn']) }}">{{ row["isbn"] }}</a></td>
+            <td>{{ row["title"] }}</td>
+            <td>{{ row["author"] }}</td>
+            <td>{{ row["year"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    $("#search_results").ready(function() {
+       document.getElementById('search_results').scrollIntoView();
+    });
+</script>

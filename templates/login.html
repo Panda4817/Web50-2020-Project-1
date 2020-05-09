@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign In
+{% endblock %}
+
+{% block header %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <h1 class="text-center title">Welcome to Book<span class="font-weight-lighter">Search</span>Review</h1>
+            </div>
+            <div class="row row justify-content-center">
+                <p class="text-center lead little">Search for books, add reviews and view Goodreads ratings</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 m-3">
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label class="lead" for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username (Case-sensitive)" pattern="^[a-zA-Z0-9]*$" title="Only letters and/or numbers" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lead" for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password (Case-sensitive)" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

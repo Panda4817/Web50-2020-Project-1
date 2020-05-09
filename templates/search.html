@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block header %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <h1 class="text-center title">Book <span class="font-weight-lighter">Search</span></h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 shadow-lg m-3 p-3">
+                    <form id="search" action="/search" method="POST">
+                        <div class="form-group">
+                            <label class="lead" for="isbn">ISBN</label>
+                            <input type="text" class="form-control" id="isbnInput" name="isbn" placeholder="Enter ISBN">
+                        </div>
+                        <div class="form-group">
+                            <label class="lead" for="title">Title</label>
+                            <input type="text" class="form-control" id="titleInput" name="title" placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label class="lead" for="author">Author</label>
+                            <input type="text" class="form-control" id="authorInput" name="author" placeholder="Enter author">
+                        </div>
+                        <button type="submit" class="btn btn-block">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="results" class="col-md-12 text-center">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Update search page with results without reloading page
+            $('#search').on('submit', function(event) {
+                $.ajax({
+                        type : 'POST',
+                        url : '/search',
+                        data : {
+                        isbn: $('#isbnInput').val(),
+                        title : $('#titleInput').val(),
+                        author: $('#authorInput').val(), 
+                    },
+                }).done(function(data) {
+                        $('#results').html(data).show();
+                    });
+            event.preventDefault();
+            });
+        })
+    </script>
+{% endblock %}

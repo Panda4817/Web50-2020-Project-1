@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+html {
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #b4dfe5, #d2fdff);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #b4dfe5, #d2fdff);
+}
+
+header, footer {
+  flex-grow: 0;
+}
+
+nav, footer {
+  background: #303c6c;
+  color: white;
+}
+
+.jumbotron {
+  background: linear-gradient(45deg, #303c6c, #f4976c, #303c6c);
+}
+
+main {
+  flex-grow: 1;
+  background: linear-gradient(90deg, #b4dfe5, #d2fdff);
+}
+main h2 {
+  color: #303c6c;
+}
+
+.title {
+  color: #303c6c !important;
+}
+
+.little {
+  color: white;
+}
+
+meter {
+  margin: 0 auto 1em;
+  width: 100%;
+  height: 0.5em;
+}
+
+meter[value="0"]::-webkit-meter-optimum-value {
+  background: none;
+}
+
+meter[value="1"]::-webkit-meter-optimum-value {
+  background: red;
+}
+
+meter[value="2"]::-webkit-meter-optimum-value {
+  background: yellow;
+}
+
+meter[value="3"]::-webkit-meter-optimum-value {
+  background: orange;
+}
+
+meter[value="4"]::-webkit-meter-optimum-value {
+  background: green;
+}
+
+.starrating > input {
+  display: none;
+}
+
+/* Remove radio buttons */
+.starrating > label:before {
+  content: "";
+  /* Star */
+  margin: 2px;
+  font-size: 3em;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.starrating > label {
+  color: white;
+  /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label {
+  color: #303c6c;
+}
+
+/* Set yellow color when star checked */
+.starrating > input:hover ~ label {
+  color: #303c6c;
+}
+
+/* Set yellow color when star hover */
+.alert {
+  margin-left: 25% !important;
+  width: 50%;
+  z-index: 2;
+  position: absolute;
+}
+
+.fa-chevron-up {
+  color: white;
+  font-size: 5vw;
+  transition: transform 0.3s ease-out;
+}
+
+.fa-chevron-up:hover {
+  transform: translateY(-10px);
+}
+
+.btn {
+  background: #303c6c;
+  color: white !important;
+  border-color: white;
+}
+
+.btn:hover {
+  background: #f4976c;
+  border-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:focus {
+  background: #303c6c;
+  border-color: white;
+}
+
+.btn:active {
+  background: #f4976c;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table {
+  background: #303c6c;
+  color: white !important;
+}
+table thead {
+  background: #f4976c;
+  color: #303c6c !important;
+}
+
+tr:hover {
+  background: #f4976c !important;
+  color: #303c6c !important;
+}
+
+#book_info {
+  color: #303c6c;
+}
+#book_info p {
+  color: white;
+}
+
+td > a {
+  color: white;
+}
+
+#search {
+  color: white;
+}
+
+/*# sourceMappingURL=styles.css.map */
