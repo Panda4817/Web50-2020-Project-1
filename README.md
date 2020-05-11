@@ -6,7 +6,7 @@ Users can register and then login to the website to leave reviews for books and 
 
 Created a PostgresSQL database via Heroku and created three tables: books, reviews and users.
 I also created a .env file to set all my environment variables and load them automatically when flask is run.
-the .env file contains DATABASE_URL, GOODREADS_KEY, FLASK_SECRET_KEY, FLASK_APP=path_to_application.py and FLASK_DEBUG=1. 
+the .env file contains DATABASE_URL, GOODREADS_KEY, FLASK_SECRET_KEY, FLASK_APP=path_to_application.py and FLASK_DEBUG=1.
 
 ## import.py
 
