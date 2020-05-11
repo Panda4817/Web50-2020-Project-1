@@ -253,8 +253,8 @@ def book(book_isbn):
         # Make sure book exists and get book data.
         book = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": book_isbn}).fetchone()
         if book is None:
-            flash("No such book", "error")
-            return render_template("search.html")
+            flash("404 ISBN not found", "error")
+            return render_template("search.html", username=user[0]['username'])
         
         # Get all book reviews.
         book_reviews = db.execute("SELECT * FROM reviews WHERE book_isbn = :isbn ORDER BY date_time DESC",
